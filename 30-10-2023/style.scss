@@ -1,0 +1,92 @@
+@import "./variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $primary-color;
+  font-family: $primary-font;
+  .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $dark-color;
+    padding: 10px;
+
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+    .navbar {
+      display: flex;
+      list-style-type: none;
+      gap: 15px;
+      color: $light-color;
+      font-size: 16px;
+    }
+
+    .login {
+      color: $light-color;
+    }
+  }
+  .hero {
+    display: flex;
+    border-bottom: 1px solid $dark-color;
+    // @media screen and (max-width: 768px) {
+    //   flex-direction: column;
+    // }
+
+    .text-container {
+      padding: 20px;
+      .prova-btn {
+        @include btn($width: 180px, $height: 50px);
+      }
+    }
+    .img-hero {
+      width: 50%;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+  .cardList {
+    padding: 20px;
+    border: 2px solid red;
+    @include display-flex(row);
+    flex-wrap: wrap;
+    gap: 20px;
+    .card {
+      background-color: $dark-color;
+
+      width: 250px;
+      border-radius: $border-radius-def;
+
+      .card-img {
+        width: 100%;
+        border-radius: 16px 16px 0 0;
+      }
+
+      .card-text {
+        padding: 15px;
+        @include display-flex();
+        // flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        button {
+          @include btn();
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-color: $light-color;
+
+    .hero {
+      flex-direction: column;
+    }
+  }
+}

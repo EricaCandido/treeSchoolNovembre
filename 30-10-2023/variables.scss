@@ -1,0 +1,37 @@
+//variabili
+
+//colori
+$dark-color: #b0578d;
+$primary-color: #d988b9;
+$hover-color: #facbea;
+$light-color: #ffe4d6;
+
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+$primary-font: "Roboto Mono", monospace;
+$border-radius-def: 16px;
+
+//mixins
+@mixin btn($width: 100px, $height: 50px) {
+  padding: 5px;
+  border: none;
+  background-color: $primary-color;
+  border-radius: $border-radius-def;
+  color: $light-color;
+  transition: all 0.3s;
+  cursor: pointer;
+  width: $width;
+  height: $height;
+  &:hover {
+    transform: scale(1.3);
+    background-color: $hover-color;
+    color: $dark-color;
+  }
+}
+
+@mixin display-flex($direction: column, $align: center, $justify: flex-end) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}

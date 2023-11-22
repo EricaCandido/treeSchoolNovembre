@@ -1,0 +1,13 @@
+body {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(203, 121, 246, 1) 68%,
+    rgba(246, 222, 255, 1) 100%
+  );
+}
+
+main {
+  color: #9c27b0;
+}
