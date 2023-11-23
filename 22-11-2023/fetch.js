@@ -54,26 +54,78 @@
 const url = "https://jsonplaceholder.typicode.com/todos";
 
 let todoList = [];
-
-fetch(url, {
-  method: "GET",
-  headers: {
-    Accept: "application/json",
-  },
-})
-  .then((res) => {
-    if (!res.ok) {
-      throw new Error(res.status);
-    }
-    return res.json();
-  })
-  .then((data) => {
-    // console.log(data.slice(0, 10));
-    data.map((todo) => todoList.push(todo));
-    // todoList = data;
-    todoList = todoList.slice(0, 10);
-    console.log(todoList);
-    console.log(data);
-  });
+//GET
+// fetch(url, {
+//   method: "GET",
+//   headers: {
+//     Accept: "application/json",
+//   },
+// })
+//   .then((res) => {
+//     if (!res.ok) {
+//       throw new Error(res.status);
+//     }
+//     return res.json();
+//   })
+//   .then((data) => {
+//     // console.log(data.slice(0, 10));
+//     data.map((todo) => todoList.push(todo));
+//     // todoList = data;
+//     todoList = todoList.slice(0, 10);
+//     // console.log(todoList);
+//     // console.log(data);
+//   });
 
 // console.log(todoList);
+//POST
+// const postData = {
+//   userId: 6,
+//   title: "Fare la spesa",
+//   completed: false,
+// };
+
+// fetch("https://jsonplaceholder.typicode.com/todos", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(postData),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log("Risposta della richiesta POST:", data);
+//   })
+//   .catch((error) => {
+//     console.log("Errore durante la richiesta POST:", error);
+//   });
+
+//PUT
+// const putData = {
+//   userId: 6,
+//   title: "Andare a fare shopping",
+//   completed: true,
+// };
+// fetch("https://jsonplaceholder.typicode.com/todos/16", {
+//   method: "PUT",
+//   headers: {
+//     "Content-type": "application/json",
+//   },
+//   body: JSON.stringify(putData),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log("Risposta della richiesta PUT ", data);
+//   })
+//   .catch((error) => console.log("Errore durante la richiesta PUT: ", error));
+
+//DELETE
+// fetch("https://jsonplaceholder.typicode.com/todos/1", {
+//   method: "DELETE",
+// })
+//   .then((req) => {
+//     if (!req.ok) {
+//       throw new Error("Errore durante la richiesta DELETE ", req.statusText);
+//     }
+//     console.log("Elemento eliminato con successo");
+//   })
+//   .catch((error) => console.log("Errore: ", error));
